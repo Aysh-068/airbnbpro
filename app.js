@@ -104,7 +104,10 @@ app.use((req,res,next) => {
     console.log(res.locals.success);
     next();
 });
-
+// NEW: Root route to redirect to /listings
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 app.use("/", userRouter);
 // //demo user
 // app.get("/demouser", async (req, res) => {
